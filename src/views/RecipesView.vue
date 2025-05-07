@@ -229,17 +229,7 @@ const getIngredientUnit = (id: string) => {
   return ingredient ? ingredient.unit : ''
 }
 
-// 添加新菜谱
-const addNewRecipe = () => {
-  isEditing.value = false
-  currentRecipe.value = {
-    id: '',
-    name: '',
-    ingredients: [],
-    description: ''
-  }
-  showAddDialog.value = true
-}
+
 
 // 编辑菜谱
 const editRecipe = (recipe: Recipe) => {
@@ -266,8 +256,8 @@ const saveRecipe = () => {
       title: '提示',
       message: '当前菜谱没有添加任何配料，确定要保存吗？',
       showCancelButton: true,
-    }).then(({ confirm }) => {
-      if (confirm) {
+    }).then((res) => {
+      if (res) {
         saveRecipeToStore()
       }
     })

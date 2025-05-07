@@ -106,17 +106,6 @@ const currentIngredient = ref<Ingredient>({
 // 删除对话框状态
 const showDeleteDialog = ref(false)
 
-// 添加新原材料
-const addNewIngredient = () => {
-  isEditing.value = false
-  currentIngredient.value = {
-    id: '',
-    name: '',
-    unit: '',
-    description: ''
-  }
-  showAddDialog.value = true
-}
 
 // 编辑原材料
 const editIngredient = (ingredient: Ingredient) => {
